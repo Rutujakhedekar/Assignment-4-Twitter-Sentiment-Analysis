@@ -1,0 +1,16 @@
+#Title:-Twitter Data Analysis: Use Twitter data for sentiment analysis. The dataset is 3MB in
+#size and has 31,962 tweets. Identify the tweets which are hate tweets and which are
+#not. Sample Test data set available here
+#https://datahack.analyticsvidhya.com/contest/practice-problem-twitter-sentiment-analysis/
+
+install.packages(&#39;sentimentr&#39;)
+library(&#39;sentimentr&#39;)
+#data &lt;- Twitter.sentiment.self.drive.DFE
+data &lt;- read.csv(&quot;Twitter-sentiment-self-drive-DFE.csv&quot;)
+tweets &lt;- data[,ncol(data)]
+tweets
+for(i in tweets)
+{
+x &lt;- sentiment(i)
+print(x)
+}
